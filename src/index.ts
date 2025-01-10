@@ -46,6 +46,10 @@ export class SmsApi {
             throw new Error("Both phoneNumber and message are required.");
         }
 
+        if (this.senderName) payload.sender = this.senderName;
+        if (this.identifierId) payload.from = this.identifierId;
+
+
         try {
             const response: AxiosResponse = await axios.post(`${this.baseUrl}/send`, payload, {
                 headers: this.headers,

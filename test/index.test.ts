@@ -1,5 +1,8 @@
 import { SmsApi } from '../src';
 import { SendSmsGetRequest, BulkSMSRequest, SendSecurityCodeRequest, VerifyCodeRequest } from '../src/types/index.types';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const smsApi = new SmsApi({
     apiKey: process.env.AFROMESSAGE_TOKEN || "",
@@ -17,7 +20,7 @@ const sendSmsExample = async () => {
 
     try {
         const response = await smsApi.sendSms(payload);
-        console.log("sendSms response:", response);
+        console.dir(response, { depth: null });
     } catch (error) {
         console.error("sendSms error:", error);
     }
@@ -70,7 +73,7 @@ const verifyCodeExample = async () => {
 };
 
 // Run examples
-sendSmsExample();
-sendBulkSmsExample();
-sendSecurityCodeExample();
+// sendSmsExample();
+// sendBulkSmsExample();
+// sendSecurityCodeExample();
 verifyCodeExample();
