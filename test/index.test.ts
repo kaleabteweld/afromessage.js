@@ -1,12 +1,11 @@
-import { SmsApi } from '../src';
+import Afromessage from '../src';
 import { SendSmsGetRequest, BulkSMSRequest, SendSecurityCodeRequest, VerifyCodeRequest } from '../src/types/index.types';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const smsApi = new SmsApi({
+const smsApi = new Afromessage({
     apiKey: process.env.AFROMESSAGE_TOKEN || "",
-    baseUrl: "https://api.afromessage.com/api",
     senderName: process.env.AFROMESSAGE_SENDER_NAMES || "",
     identifierId: process.env.AFROMESSAGE_IDENTIFIER_ID || "",
 });
@@ -76,4 +75,4 @@ const verifyCodeExample = async () => {
 // sendSmsExample();
 // sendBulkSmsExample();
 // sendSecurityCodeExample();
-verifyCodeExample();
+// verifyCodeExample();

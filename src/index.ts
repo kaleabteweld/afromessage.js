@@ -4,7 +4,7 @@ import { BulkSMSRequest, BulkSMSResponse, SendSecurityCodeRequest, SendSecurityC
 /**
  * A class to interact with an SMS API.
  */
-export class SmsApi {
+export default class Afromessage {
     private readonly apiKey: string;
     private readonly baseUrl: string;
     private readonly headers: Record<string, string>;

@@ -31,7 +31,7 @@ AFROMESSAGE_SENDER_NAMES="YOUR_SENDER_NAME"
 Below are examples of how to use the library. Ensure you have initialized your environment variables with `dotenv`.
 
 ```typescript
-import { SmsApi } from "afromessage";
+import Afromessage from "afromessage";
 import {
   SendSmsGetRequest,
   BulkSMSRequest,
@@ -42,9 +42,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const smsApi = new SmsApi({
+const smsApi = new Afromessage({
   apiKey: process.env.AFROMESSAGE_TOKEN || "",
-  baseUrl: "https://api.afromessage.com/api",
   senderName: process.env.AFROMESSAGE_SENDER_NAMES || "",
   identifierId: process.env.AFROMESSAGE_IDENTIFIER_ID || "",
 });

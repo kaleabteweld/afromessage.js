@@ -5,7 +5,7 @@ export interface SmsApiConfig {
     /**
      * The base URL of the SMS API.
      */
-    baseUrl: string;
+    baseUrl?: string;
 
     /**
      * The API key used for authenticating requests to the SMS API.
