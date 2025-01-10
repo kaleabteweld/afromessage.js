@@ -1,10 +1,12 @@
 {
   "name": "afromessage",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Node.js library to interact with the AfroMessage SMS API. This library provides a simple and efficient way to send SMS messages, bulk SMS, and security codes, as well as verify security codes using the AfroMessage API.",
+  "main": "dist/src/index.js",
   "scripts": {
-    "dev": "nodemon test/index.test.ts"
+    "dev": "nodemon test/index.test.ts",
+    "build": "tsc --declaration",
+    "publish": "npx semantic-release"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +15,18 @@
     "@types/node": "^22.10.5",
     "dotenv": "^16.4.7",
     "nodemon": "^3.1.9",
+    "semantic-release": "^24.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "axios": "^1.7.9"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
