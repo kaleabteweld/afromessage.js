@@ -5,6 +5,9 @@ import { BulkSMSRequest, BulkSMSResponse, SendSecurityCodeRequest, SendSecurityC
  * A class to interact with an SMS API.
  */
 export default class Afromessage {
+
+    private static instance: Afromessage;
+
     private readonly apiKey: string;
     private readonly baseUrl: string;
     private readonly headers: Record<string, string>;
@@ -16,7 +19,7 @@ export default class Afromessage {
      * @param apiKey - The API key for authentication.
      * @param baseUrl - The base URL of the SMS API.
      */
-    constructor({
+    private constructor({
         apiKey = process.env.AFROMESSAGE_TOKEN || "",
         baseUrl = "https://api.afromessage.com/api",
         senderName = process.env.AFROMESSAGE_SENDER_NAMES || "",
@@ -34,6 +37,19 @@ export default class Afromessage {
         };
         this.senderName = senderName;
         this.identifierId = identifierId;
+    }
+
+
+    /**
+     * Gets the singleton instance of the SmsApi class.
+     * @param config - The configuration options for the SMS API.
+     * @returns The singleton instance of the SmsApi class.
+     */
+    public static getInstance(config: SmsApiConfig): Afromessage {
+        if (!Afromessage.instance) {
+            Afromessage.instance = new Afromessage(config);
+        }
+        return Afromessage.instance;
     }
 
     /**

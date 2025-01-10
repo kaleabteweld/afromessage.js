@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const smsApi = new Afromessage({
+const smsApi = Afromessage.getInstance({
     apiKey: process.env.AFROMESSAGE_TOKEN || "",
     senderName: process.env.AFROMESSAGE_SENDER_NAMES || "",
     identifierId: process.env.AFROMESSAGE_IDENTIFIER_ID || "",

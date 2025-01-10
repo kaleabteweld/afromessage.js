@@ -30,6 +30,8 @@ AFROMESSAGE_SENDER_NAMES="YOUR_SENDER_NAME"
 
 Below are examples of how to use the library. Ensure you have initialized your environment variables with `dotenv`.
 
+#### Since the `Afromessage` class is a singleton, always use `Afromessage.getInstanc`e to get the instance of the class.
+
 ```typescript
 import Afromessage from "afromessage";
 import {
@@ -42,7 +44,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const smsApi = new Afromessage({
+const smsApi = Afromessage.getInstance({
   apiKey: process.env.AFROMESSAGE_TOKEN || "",
   senderName: process.env.AFROMESSAGE_SENDER_NAMES || "",
   identifierId: process.env.AFROMESSAGE_IDENTIFIER_ID || "",
@@ -114,13 +116,13 @@ const verifyCodeExample = async () => {
 
 ### `constructor(config: SmsApiConfig)`
 
-Initializes the `SmsApi` class.
+Initializes the `Afromessage` class.
 
 **Parameters:**
 
 - `config: SmsApiConfig`
   - `apiKey`: The API key for authentication.
-  - `baseUrl`: The base URL of the SMS API.
+  - `baseUrl`: The base URL of the SMS API. **Optional**
   - `senderName`: The sender name.
   - `identifierId`: The identifier ID.
 
@@ -135,8 +137,8 @@ Sends an SMS message.
 - `payload: SendSmsGetRequest`
   - `to`: The recipient phone number. **Mandatory**.
   - `message`: The SMS message to send. **Mandatory**.
-  - `from`: The identifier ID. **Optional**.
-  - `sender`: The sender name. **Optional**.
+  - `from`: The identifier ID. **Optional**. `will be added from Afromessage.senderName`
+  - `sender`: The sender name. **Optional**. `will be added from Afromessage.identifierId`
   - `template`: Indicates if the message is a template ID. Default is `0`. **Optional**.
   - `callback`: The callback URL to receive SMS send progress. **Optional**.
 
@@ -180,6 +182,8 @@ Sends a security code to the specified recipient.
   - `ps`: A postfix for the message to append after the security code. **Optional**.
   - `sb`: The number of spaces between the prefix and the generated code. Default is `0`. **Optional**.
   - `sa`: The number of spaces between the generated code and the postfix. Default is `0`. **Optional**.
+- `from`: The identifier ID. **Optional**. `will be added from Afromessage.senderName`
+- `sender`: The sender name. **Optional**. `will be added from Afromessage.identifierId`
 
 **Returns:**
 
