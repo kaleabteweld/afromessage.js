@@ -1,5 +1,7 @@
 # Afromessage.js
 
+![Afromessage Icon](https://afromessage.com/assets/images/logo.png)
+
 A Node.js library to interact with the AfroMessage SMS API. This library provides a simple and efficient way to send SMS messages, bulk SMS, and security codes, as well as verify security codes using the AfroMessage API.
 
 For more information, visit the [AfroMessage Developer Documentation](https://afromessage.com/developers).
@@ -33,13 +35,13 @@ Below are examples of how to use the library. Ensure you have initialized your e
 #### Since the `Afromessage` class is a singleton, always use `Afromessage.getInstanc`e to get the instance of the class.
 
 ```typescript
-import Afromessage from "afromessage";
-import {
+import Afromessage, {
   SendSmsGetRequest,
   BulkSMSRequest,
   SendSecurityCodeRequest,
   VerifyCodeRequest,
-} from "afromessage/types/index.types";
+} from "afromessage";
+
 import dotenv from "dotenv";
 
 dotenv.config();

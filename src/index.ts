@@ -155,3 +155,7 @@ export default class Afromessage {
         }
     }
 }
+
+
+// export types
+export { BulkSMSRequest, BulkSMSResponse, SendSecurityCodeRequest, SendSecurityCodeResponse, SendSmsGetRequest, SendSmsGetResponse, SmsApiConfig, VerifyCodeRequest, VerifyCodeResponse };
