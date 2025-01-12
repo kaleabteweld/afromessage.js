@@ -1,6 +1,6 @@
 {
   "name": "afromessage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Node.js library to interact with the AfroMessage SMS API. This library provides a simple and efficient way to send SMS messages, bulk SMS, and security codes, as well as verify security codes using the AfroMessage API.",
   "main": "dist/src/index.js",
   "scripts": {
