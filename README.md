@@ -2,9 +2,21 @@
 
 ![Afromessage Icon](https://afromessage.com/assets/images/logo.png)
 
+`Afromessage.js is a tool that helps you send text messages (SMS) to many people at once. You can also send special codes for security purposes and check if those codes are correct. It uses the AfroMessage service to do all this.`
+
 A Node.js library to interact with the AfroMessage SMS API. This library provides a simple and efficient way to send SMS messages, bulk SMS, and security codes, as well as verify security codes using the AfroMessage API.
 
 For more information, visit the [AfroMessage Developer Documentation](https://afromessage.com/developers).
+
+## Why Afromessage.js?
+
+**Easy to Understand API:** Afromessage.js provides a straightforward and intuitive API, making it easy to send SMS messages, bulk SMS, and security codes without needing to dive deep into complex documentation.
+
+**Typed with JSDoc:** The library is fully typed with JSDoc, ensuring that you get accurate type information and documentation directly in your IDE, reducing the chances of errors and improving development speed.
+
+**Robust Error Handling:** Afromessage.js includes comprehensive error handling, ensuring that you can easily identify and resolve issues that may arise during API interactions.
+
+**Singleton Class** The Afromessage class is a singleton, meaning you can call it from anywhere in your application without needing to create multiple instances. This simplifies the usage and ensures consistent configuration across your project.
 
 ## Installation
 
