@@ -20,11 +20,13 @@ For more information, visit the [AfroMessage Developer Documentation](https://af
 
 ## Installation
 
-Install the package using npm or yarn:
+Install the package using npm:
 
 ```bash
 npm install afromessage
 ```
+
+or yarn:
 
 ```bash
 yarn add afromessage
@@ -67,7 +69,7 @@ const smsApi = Afromessage.getInstance({
 // Example for sendSms
 const sendSmsExample = async () => {
   const payload: SendSmsGetRequest = {
-    to: "0900640160",
+    to: "09XXXXXXXXX",
     message: "Hello, this is a test message.",
   };
 
@@ -82,8 +84,8 @@ const sendSmsExample = async () => {
 // Example for sendBulkSMS
 const sendBulkSmsExample = async () => {
   const payload: BulkSMSRequest = {
-    to: ["0900640160"],
-    sender: "Shewaber",
+    to: ["09XXXXXXXXX"],
+    sender: "NAME", // process.env.AFROMESSAGE_SENDER_NAMES
     message: "Hello, this is a bulk test message.",
   };
 
@@ -98,7 +100,7 @@ const sendBulkSmsExample = async () => {
 // Example for sendSecurityCode
 const sendSecurityCodeExample = async () => {
   const payload: SendSecurityCodeRequest = {
-    to: "0900640160",
+    to: "09XXXXXXXXX",
     len: 6,
   };
 
@@ -113,7 +115,7 @@ const sendSecurityCodeExample = async () => {
 // Example for verifyCode
 const verifyCodeExample = async () => {
   const payload: VerifyCodeRequest = {
-    to: "0900640160",
+    to: "09XXXXXXXXX",
     code: "123456",
   };
 
